@@ -8,15 +8,15 @@ export default function LogoutWithImage() {
     // console.log("Logout");
   };
   return (
-    <button
-      className="flex flex-row items-center btn justify-center "
-      onClick={handleLogout}>
+    <div
+      className="flex flex-row items-center gap-2 items-center justify-center "
+      >
       <img
         src={user.photoURL}
         alt="User Avatar"
         className=" border w-10 h-10 rounded-full hidden md:flex"
       />
-      <p className=" text-pretty text-[24px]">Logout</p>
-    </button>
+      <button onClick={handleLogout} className="btn btn-error">Logout</button>
+    </div>
   );
 }

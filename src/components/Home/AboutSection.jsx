@@ -44,7 +44,7 @@ function AboutSection() {
 
         <div className="mt-8">
           <Link to="/start-learning">
-            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 animate__animated animate__pulse animate__infinite">
+            <button className="btn btn-accent text-white px-6 py-3 rounded-lg shadow-lg  animate__animated animate__pulse animate__infinite">
               Start Learning Now
             </button>
           </Link>

@@ -7,6 +7,7 @@ import LogoutWithImage from "./Buttons/LogoutWithImage";
 
 export default function NavBar() {
   const { user } = useContext(AuthContext);
+
   const items = [
     <li key="home">
       <NavLink to="/">Home</NavLink>
@@ -22,9 +23,9 @@ export default function NavBar() {
     </li>,
   ];
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-[rgb(241,3,51)] p-8">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"

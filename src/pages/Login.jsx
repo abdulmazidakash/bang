@@ -148,7 +148,7 @@ export default function Login() {
               </div>
               <div className="form-control mt-6">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-accent"
                   type="submit"
                   disabled={!!signupPasswordError}>
                   Signup
@@ -211,23 +211,23 @@ export default function Login() {
               </div>
               <div className="form-control mt-6">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-success"
                   type="submit"
                   disabled={!!passwordError}>
                   Login
                 </button>
               </div>
-              <p className="text-center">or</p>
+              <p className="text-center font-semibold">or</p>
               <div className="form-control ">
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn-accent"
                   onClick={handleGoogleLogin}>
                   Login with Google
                 </button>
               </div>
               <p className="text-center py-2">
                 Don't have an account?{" "}
-                <button
+                <button 
                   className="text-blue-400"
                   onClick={() => setLogin(false)}>
                   Sign up

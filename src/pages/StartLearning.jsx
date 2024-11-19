@@ -69,7 +69,7 @@ export default function StartLearning() {
         </div>
         <div className="text-center mt-6">
           <Link to="/tutorials">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded">
+            <button className="btn btn-info text-white px-4 py-2 rounded">
               View more
             </button>
           </Link>
