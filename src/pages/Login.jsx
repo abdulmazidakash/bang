@@ -248,19 +248,22 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import signinIcon from "../assets/icons/signinIcon.png";
+import toast from "react-hot-toast";
 
 export default function Login() {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true); // State to toggle between login and signup
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
   const [signupPasswordError, setSignupPasswordError] = useState("");
   const [signupName, setSignupName] = useState("");
   const [signupPhotoUrl, setSignupPhotoUrl] = useState("");
-  const authContext = useContext(AuthContext);
+  const authContext = useContext(AuthContext); // Get authentication context
   const { googleLogin, signInUser } = useContext(AuthContext);
+  const location = useLocation(); // Get the current location
+  const navigate = useNavigate(); // Get the navigate function
 
   const clickToLogin = () => {
     setLogin(true);
@@ -269,8 +272,10 @@ export default function Login() {
   const clickToSignup = () => {
     setLogin(false);
   };
-  const handleGoogleLogin = () => {
-    googleLogin();
+
+  const handleGoogleLogin = async () => {
+    await googleLogin(); // Wait for Google login to complete
+    navigate(location?.state?.from?.pathname || "/"); // Navigate to the previous page or home page
   };
 
   const handlePasswordChange = (e) => {
@@ -286,6 +291,40 @@ export default function Login() {
     }
   };
 
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    if (!signupPasswordError) {
+      try {
+        await authContext.createAccount(
+          e.target.email.value,
+          e.target.password.value,
+          signupName,
+          signupPhotoUrl
+        );
+        navigate(location?.state?.from?.pathname || "/"); // Navigate to the previous page or home page
+      } catch (error) {
+        console.error("Signup failed:", error);
+      }
+    }
+  };
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   await signInUser(e.target.email.value, e.target.password.value);
+  //   navigate(location?.state?.from?.pathname || "/");
+  // };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await signInUser(e.target.email.value, e.target.password.value); // Attempt to sign in
+      navigate(location?.state?.from?.pathname || "/"); // Navigate only on success
+    } catch (error) {
+      toast("Login Failed"); // Log the error for debugging
+      // No navigation happens here because the login failed
+    }
+  };
+  //
   const handleSignupPasswordChange = (e) => {
     const value = e.target.value;
     setSignupPassword(value);
@@ -298,33 +337,11 @@ export default function Login() {
       setSignupPasswordError("");
     }
   };
-
-  const handleSignup = (e) => {
-    e.preventDefault();
-    if (!signupPasswordError) {
-      authContext.createAccount(
-        e.target.email.value,
-        e.target.password.value,
-        signupName,
-        signupPhotoUrl
-      );
-    }
-  };
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // console.log("Login", e.target.email.value, e.target.password.value);
-    // signInUser(e.target.email.value, e.target.password.value);
-    signInUser(e.target.email.value, e.target.password.value);
-  };
-
   return (
     <div className="mx-auto">
       {!login && (
         <div className="signup-area flex items-center justify-center my-11">
           <div className="card bg-base-100 w-full px-4 py-10 max-w-sm shrink-0 shadow-2xl">
-            {/* <iframe src="https://lottie.host/embed/4df15ff0-24bb-4133-a7c5-9442e73e52d2/zBwiPCNWfr.json"></iframe>
-             */}
             <iframe src="https://lottie.host/embed/7ef54e79-d507-4742-bc3e-f74354262fa3/AE2csfvfUB.json"></iframe>
             <form className="card-body p-0" onSubmit={handleSignup}>
               <div className="form-control">
@@ -411,10 +428,9 @@ export default function Login() {
       )}
       {login && (
         <div className="login-area flex items-center justify-center py-10">
-          {/* Login form goes here */}
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form className="card-body" onSubmit={handleLogin}>
-              <img src={signinIcon} />
+              {/* <img src={signinIcon} /> */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -444,9 +460,11 @@ export default function Login() {
                   <p className="text-red-500 text-xs mt-1">{passwordError}</p>
                 )}
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <Link
+                    to="/resetPassword"
+                    className="label-text-alt link link-hover">
                     Forgot password?
-                  </a>
+                  </Link>
                 </label>
               </div>
               <div className="form-control mt-6">

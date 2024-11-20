@@ -1,30 +1,4 @@
-// import React, { useContext } from "react";
-// import { Link, NavLink } from "react-router-dom";
-// import logoIcon from "../assets/icons/logoIcon.png";
-// import userLogout from "../assets/icons/userLogout.png";
-// import { AuthContext } from "../contexts/AuthProvider";
-// import LogoutWithImage from "./Buttons/LogoutWithImage";
 
-// export default function NavBar() {
-//   const { user } = useContext(AuthContext);
-
-//   const items = [
-//     <li key="home">
-//       <NavLink to="/">Home</NavLink>
-//     </li>,
-//     <li key="start-learning">
-//       <NavLink to="/start-learning">Start Learning</NavLink>
-//     </li>,
-//     <li key="tutorials">
-//       <NavLink to="/tutorials">Tutorials</NavLink>
-//     </li>,
-//     <li key="about-us">
-//       <NavLink to="/about-us">About Us</NavLink>
-//     </li>,
-//     // <li key="myProfile">
-//     //   <NavLink to="/myProfile">My Profile</NavLink>
-//     // </li>,
-//   ];
 //   return (
 //     <div className="navbar bg-[#00BBA6] p-6">
 //       <div className="navbar-start">
@@ -102,12 +76,12 @@ export default function NavBar() {
       <li key="profile">
         <NavLink to="/profile">Profile</NavLink>
       </li>
-    ) : null
+    ) : null,
   ];
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-[#00BBA6] p-6">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -127,17 +101,27 @@ export default function NavBar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1000] mt-3 w-52 p-2 shadow">
             {items}
+            <div className=" items-center justify-center flex flex-row">
+              {user ? (
+                <LogoutWithImage />
+              ) : (
+                <Link to="/login" className="btn btn-ghost">
+                  <p>Login</p>
+                  <img src={userLogout} className="w-5 h-5" />
+                </Link>
+              )}
+            </div>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost text-xl">
           <img src={logoIcon} alt="Logo" className="w-10 h-10" />
           <p>Vocabulary Learning</p>
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{items}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end hidden md:flex">
         {user ? (
           <LogoutWithImage />
         ) : (

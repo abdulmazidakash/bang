@@ -1,94 +1,6 @@
-// import React, { useContext } from "react";
-// import "animate.css"; // Import Animate.css
-// import learnwithvocabularies from "../data/learnwithvocabularies.json"; // Correct import statement
-// import Marquee from "react-fast-marquee";
-// import VocabularyCard from "../components/VocabularyCard";
-// import { AuthContext } from "../contexts/AuthProvider";
-// import { Link } from "react-router-dom";
 
-// export default function StartLearning() {
-//   const { user, logIn } = useContext(AuthContext);
-
-//   // console.log("from start learning", logIn);
-//   return (
-//     <div className="mx-auto mt-10 px-4">
-//       <div className="p-4 rounded-2xl bg-[#00bba5ab]">
-//         {/* Marquee Component with Custom Settings */}
-//       <Marquee
-//         gradient={false} // Disable gradient fade on the sides of the marquee
-//         speed={30} // Speed of the scrolling text
-//         pauseOnHover={true} // Pause when mouse hovers over the text
-//         direction="left" // Direction of scrolling (can also be "right")
-//       >
-//         <span className="text-xl font-semibold text-gray-800 ">
-//           Welcome to Lingo Bingo! Start learning new words today and expand your
-//           vocabulary in your chosen language. From common phrases to advanced
-//           terms, we help you speak confidently and fluently. Let's embark on
-//           this exciting learning journey together!
-//         </span>
-//       </Marquee>
-//       </div>
-
-//       {/* Main Section with Animated Heading */}
-//       <div className="text-center mt-10">
-//         <h1 className="animate__animated animate__fadeIn animate__delay-1s text-4xl font-bold text-gray-900">
-//           Ready to Learn a New Language?
-//         </h1>
-//         <p className="font-semibold animate__animated animate__fadeIn animate__delay-2s text-lg text-gray-600 mt-4">
-//           Explore lessons, build vocabulary, and master a new language with
-//           ease. Let's get started today!
-//         </p>
-//       </div>
-
-//       {/* Static Lesson Cards */}
-//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-//         {learnwithvocabularies.lessons.map((lesson) => (
-//           <Link key={lesson.lesson_no} to={`/lesson/${lesson.lesson_no}`}>
-//             <div className="card bg-[#00bba5ab] w-full aspect-w-9 aspect-h-16 shadow-lg border border-gray-200 text-center p-6">
-//               <h2 className="text-2xl font-bold">Lesson {lesson.lesson_no}</h2>
-//               <p className="text-lg text-gray-700 font-semibold mt-2">
-//                 {lesson.lesson_title}
-//               </p>
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-
-//       {/* Tutorial section */}
-//       <div className="mt-10">
-//         <h2 className="text-3xl font-bold text-gray-900 text-center">
-//           Learn the Alphabet
-//         </h2>
-//         <div className="flex justify-center mt-6 rounded-lg p-2 border border-gray-200">
-//           <iframe
-//           className="rounded-lg"
-//             width="1220"
-//             height="450"
-//             src="https://www.youtube.com/embed/drlIUqRYM-w"
-//             title="YouTube video player"
-//             frameBorder="0"
-//             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//             allowFullScreen></iframe>
-//         </div>
-//         <div className="text-center mt-6">
-//           <Link to="/tutorials">
-//             <button className="btn bg-[#00bba5ab] text-white px-4 py-2 rounded-lg">
-//               View more
-//             </button>
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-// new code ---------------------------------------------------------------------------
 import React, { useContext, useEffect, useState } from "react";
 import "animate.css"; // Import Animate.css
-import Marquee from "react-fast-marquee";
 import { AuthContext } from "../contexts/AuthProvider";
 import { Link } from "react-router-dom";
 
@@ -116,20 +28,7 @@ export default function StartLearning() {
   // console.log("from start learning", logIn);
   return (
     <div className="mx-auto mt-10 px-4">
-      {/* Marquee Component with Custom Settings */}
-      <Marquee
-        gradient={false} // Disable gradient fade on the sides of the marquee
-        speed={30} // Speed of the scrolling text
-        pauseOnHover={true} // Pause when mouse hovers over the text
-        direction="left" // Direction of scrolling (can also be "right")
-      >
-        <span className="text-xl font-semibold text-gray-800">
-          Welcome to Lingo Bingo! Start learning new words today and expand your
-          vocabulary in your chosen language. From common phrases to advanced
-          terms, we help you speak confidently and fluently. Let's embark on
-          this exciting learning journey together!
-        </span>
-      </Marquee>
+
       {/* Main Section with Animated Heading */}
       <div className="text-center mt-10">
         <h1 className="animate__animated animate__fadeIn animate__delay-1s text-4xl font-bold text-gray-900">
@@ -145,7 +44,7 @@ export default function StartLearning() {
         {dataVoc ? (
           dataVoc.lessons.map((lesson) => (
             <Link key={lesson.lesson_no} to={`/lesson/${lesson.lesson_no}`}>
-              <div className="card bg-blue-200 w-full aspect-w-9 aspect-h-16 shadow-xl text-center p-6">
+              <div className="card bg-[#00BBA6]  w-full aspect-w-9 aspect-h-16 shadow-xl text-center p-6">
                 <h2 className="text-2xl font-bold">
                   Lesson {lesson.lesson_no}
                 </h2>
@@ -171,11 +70,11 @@ export default function StartLearning() {
         <h2 className="text-3xl font-bold text-gray-900 text-center">
           Learn the Alphabet
         </h2>
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6 border border-gray-200 p-2 rounded-lg lg:w-8/12 mx-auto">
           <iframe
-            className="w-full sm:w-3/4 lg:w-1/2"
+            className="w-full rounded-lg"
             height="450"
-            src="https://www.youtube.com/embed/drlIUqRYM-w"
+            src="https://www.youtube.com/embed/6e145BWP7ng"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -183,7 +82,7 @@ export default function StartLearning() {
         </div>
         <div className="text-center mt-6">
           <Link to="/tutorials">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded">
+            <button className="btn-accent btn text-white px-4 py-2 rounded">
               View more
             </button>
           </Link>

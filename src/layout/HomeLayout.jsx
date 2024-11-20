@@ -49,6 +49,7 @@ import SuccessSection from "../components/Home/SuccessSection";
 import TestimonialsSection from "../components/Home/TestimonialsSection";
 
 export default function HomeLayout() {
+
   return (
     <div>
       <ImageSlider />
