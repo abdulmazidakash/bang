@@ -11,7 +11,7 @@ export default function StartLearning() {
     const fetchVocabulary = async () => {
       try {
         const response = await fetch(
-          "https://raw.githubusercontent.com/mozaddedalfeshani/bslphotos/refs/heads/main/learnwithvocabularies.json"
+          "/src/data/learnwithvocabularies.json"
         );
         const data = await response.json();
         setdataVoc(data);
@@ -71,14 +71,13 @@ export default function StartLearning() {
           Learn the Alphabet
         </h2>
         <div className="flex justify-center mt-6 border border-gray-200 p-2 rounded-lg lg:w-8/12 mx-auto">
-          <iframe
+         
+            <iframe 
             className="w-full rounded-lg"
-            height="450"
-            src="https://www.youtube.com/embed/6e145BWP7ng"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+             
+            height="450" 
+            src="https://www.youtube.com/embed/HeBcxdgQI3c?si=JwfL4Bj1SQGCYoRj" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div className="text-center mt-6">
           <Link to="/tutorials">

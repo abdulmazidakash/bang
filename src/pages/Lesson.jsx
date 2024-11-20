@@ -11,7 +11,7 @@ export default function Lesson() {
     const fetchVocabulary = async () => {
       try {
         const response = await fetch(
-          "https://raw.githubusercontent.com/mozaddedalfeshani/bslphotos/refs/heads/main/learnwithvocabularies.json"
+          "/src/data/learnwithvocabularies.json"
         );
         const data = await response.json();
         const lesson = data.lessons.find(

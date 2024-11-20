@@ -10,7 +10,7 @@ const VocabularyDetails = () => {
     const fetchVocabulary = async () => {
       try {
         const response = await fetch(
-          "https://raw.githubusercontent.com/mozaddedalfeshani/bslphotos/e984ae6aad73850d8c58eb9f85211460c16b3b2e/vocabularies.json"
+          "/src/data/vocabularies.json"
         );
         const data = await response.json();
         const vocab = data.find((item) => item.id === id);
