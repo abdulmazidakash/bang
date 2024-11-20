@@ -4,11 +4,11 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules"; // Impor
 import "swiper/swiper-bundle.css";
 
 const images = [
-  "https://schoolsweek.co.uk/wp-content/uploads/2019/05/Vocabluary-words-language-feat-1000x525.jpg",
-  "https://www.quickanddirtytips.com/wp-content/uploads/2023/07/words.png",
-  "https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/organizations/5d2656f1-9162-461d-88c7-b2505623d8cb/images/2DkrClvmYUS03wX2LyZWP7.jpeg",
-  "https://www.thoughtco.com/thmb/FJWLzfHCmSIY2NX7OzpZz6BuK58=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/scrabble-5b4c6298c9e77c003725a215.jpg",
-  "https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2024/06/g6d56e72db_1717657694.jpg?size=*:900",
+  "https://i.ibb.co/nLwKsNx/bingo-banner-4.webp",
+  "https://i.ibb.co/64pbCLR/bingo-banner-7webp.webp",
+  "https://i.ibb.co/2vM55hB/bingo-banner-6webp.webp",
+  // "https://i.ibb.co/vq7jjfK/bingo-banner-3.webp",
+  // "https://i.ibb.co/ysZ4zML/bingo-banner-5webp.webp",
 ];
 
 function CoverflowSlider() {
@@ -40,7 +40,7 @@ function CoverflowSlider() {
             <img
               src={src}
               alt={`Slide ${index + 1}`}
-              className="w-full h-96 object-cover rounded-lg" // Use relative units for height
+              className="w-full h-[500px] object-cover rounded-lg" // Use relative units for height
             />
           </SwiperSlide>
         ))}
