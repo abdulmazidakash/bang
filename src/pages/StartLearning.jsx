@@ -11,7 +11,7 @@ export default function StartLearning() {
     const fetchVocabulary = async () => {
       try {
         const response = await fetch(
-          "/src/data/learnwithvocabularies.json"
+          "https://raw.githubusercontent.com/abdulmazidakash/json/refs/heads/main/learnwithvocabularies.json"
         );
         const data = await response.json();
         setdataVoc(data);
