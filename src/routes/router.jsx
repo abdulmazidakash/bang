@@ -56,9 +56,16 @@ const router = createBrowserRouter([
             </div>
           </PrivateProvider>
         ),
+        
       },
+      
     ],
+    
   },
+  {
+    path: '*',
+    element: <h2 className="font-bold text-center text-red-600">404 not found</h2>,
+  }
 ]);
 
 export default router;

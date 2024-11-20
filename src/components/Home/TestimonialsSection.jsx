@@ -24,7 +24,7 @@ const testimonials = [
 
 function TestimonialsSection() {
   return (
-    <section className="bg-gray-50 py-16 px-4">
+    <section className="bg-gray-100 py-12 md:py-24 px-4 shadow-lg border border-gray-200 rounded-lg animate__animated animate__fadeIn">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-6 animate__animated animate__fadeInDown">
           What Our Users Say
@@ -37,15 +37,15 @@ function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 bg-white shadow-lg rounded-lg animate__animated animate__zoomIn ">
+              className="p-6 bg-[#00BBA6] shadow-2xl rounded-lg animate__animated animate__zoomIn ">
               <p className="text-lg text-gray-700 italic">
                 "{testimonial.quote}"
               </p>
               <div className="mt-4">
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-bold text-gray-700 italic">
                   {testimonial.name}
                 </h3>
-                <p className="text-gray-500">{testimonial.role}</p>
+                <p className="text-gray-700 font-semibold italic">{testimonial.role}</p>
               </div>
             </div>
           ))}

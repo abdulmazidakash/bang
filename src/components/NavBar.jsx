@@ -21,9 +21,12 @@ export default function NavBar() {
     <li key="about-us">
       <NavLink to="/about-us">About Us</NavLink>
     </li>,
+    // <li key="myProfile">
+    //   <NavLink to="/myProfile">My Profile</NavLink>
+    // </li>,
   ];
   return (
-    <div className="navbar bg-[rgb(241,3,51)] p-8">
+    <div className="navbar bg-[#00BBA6] p-6">
       <div className="navbar-start">
         <div className="dropdown z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,7 +56,7 @@ export default function NavBar() {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{items}</ul>
+        <ul className="menu menu-horizontal px-1 font-semibold">{items}</ul>
       </div>
       <div className="navbar-end">
         {user ? (

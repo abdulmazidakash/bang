@@ -16,11 +16,11 @@ function AboutSection() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="text-left animate__animated animate__fadeInLeft">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-4">
+          <div className="text-left text-white shadow-lg rounded-lg p-8 bg-[#00BBA6] animate__animated animate__fadeInLeft">
+            <h3 className="text-2xl font-semibold t mb-4">
               How It Works
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg ">
               Our website offers a collection of vocabulary words, with detailed
               information such as pronunciation, meaning, part of speech, and
               example sentences. You can learn vocabulary at your own pace by
@@ -29,11 +29,11 @@ function AboutSection() {
             </p>
           </div>
 
-          <div className="text-left animate__animated animate__fadeInRight">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-4">
+          <div className="text-left text-white shadow-lg rounded-lg p-8 bg-[#00BBA6] animate__animated animate__fadeInRight">
+            <h3 className="text-2xl font-semibold  mb-4">
               Why Learn with Us?
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg ">
               We believe that language learning should be easy, accessible, and
               effective. With our carefully curated vocabulary list, users can
               gradually build their knowledge and improve their language skills

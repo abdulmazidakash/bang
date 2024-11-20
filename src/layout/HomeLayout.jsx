@@ -1,21 +1,38 @@
 import React from "react";
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 import ImageSlider from "../components/Home/ImageSlider";
 import AboutSection from "../components/Home/AboutSection";
 import SuccessSection from "../components/Home/SuccessSection";
 import TestimonialsSection from "../components/Home/TestimonialsSection";
+import FeaturedLesson from "../components/FeaturedLesson";
 
 
 export default function HomeLayout() {
   return (
     <div>
 
-      <ImageSlider />
-      <AboutSection />
-      <SuccessSection />
-      <TestimonialsSection />
+      <div>
+        <ImageSlider />
+      </div>
+
+      <div>
+        <AboutSection />
+      </div>
+
+      <div>
+        <SuccessSection />
+      </div>
+
+      <div>
+        <TestimonialsSection />
+      </div>
+
       {/* <Banner /> */}
-	  <Banner></Banner>
+      <div>
+        {/* <Banner></Banner> */}
+        <FeaturedLesson></FeaturedLesson>
+      </div>
+
     </div>
   );
 }

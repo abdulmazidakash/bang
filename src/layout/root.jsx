@@ -7,7 +7,7 @@ export default function Root() {
   return (
     <div>
       <NavBar />
-      <div className="container mx-auto">
+      <div className="container mx-auto my-8">
         <Outlet />
       </div>
       <Footer />
