@@ -1,7 +1,7 @@
 
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logoIcon from "../assets/icons/logoIcon.png";
+import logoIcon from "../assets/icons/lingo-logo.png";
 import userLogout from "../assets/icons/userLogout.png";
 import { AuthContext } from "../contexts/AuthProvider";
 import LogoutWithImage from "./Buttons/LogoutWithImage";
@@ -23,12 +23,12 @@ export default function NavBar() {
     </li>,
     user ? (
       <li key="profile">
-        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/profile">My Profile</NavLink>
       </li>
     ) : null,
   ];
   return (
-    <div className="navbar bg-[#00BBA6] p-6">
+    <div className="navbar bg-[#00BBA6] p-6 shadow-lg border-b">
       <div className="navbar-start">
         <div className="dropdown z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,7 +48,7 @@ export default function NavBar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1000] mt-3 w-52 p-2 shadow">
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1000] mt-3 w-52 p-2 shadow font-semibold">
             {items}
             <div className=" items-center justify-center flex flex-row">
               {user ? (
@@ -63,11 +63,11 @@ export default function NavBar() {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl">
-          <img src={logoIcon} alt="Logo" className="w-10 h-10" />
+          <img  src={logoIcon} alt="Logo" className="w-14 h-14 bg-white rounded-full" />
           <p className="text-4xl font-extrabold text-gray-600">Lingo Bingo</p>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex font-semibold">
         <ul className="menu menu-horizontal px-1">{items}</ul>
       </div>
       <div className="navbar-end hidden md:flex">

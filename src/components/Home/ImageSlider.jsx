@@ -4,10 +4,8 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules"; // Impor
 import "swiper/swiper-bundle.css";
 
 const images = [
-  "https://i.ibb.co/5Yj0dRf/bingo-4.jpg",
+  "https://i.ibb.co/nLwKsNx/bingo-banner-4.webp",
   "https://i.ibb.co/3N8ksc4/bingo-3.jpg",
-  "https://i.ibb.co/2jvTnJc/bingo-5.jpg",
-  "https://i.ibb.co/tXpPX25/bingo-6.jpg",
   "https://i.ibb.co/wLH3qdq/bingo-2.jpg",
 ];
 

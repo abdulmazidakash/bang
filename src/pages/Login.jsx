@@ -3,8 +3,9 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import signinIcon from "../assets/icons/signinIcon.png";
+
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 export default function Login() {
   const [login, setLogin] = useState(true); // State to toggle between login and signup
@@ -93,10 +94,14 @@ export default function Login() {
   };
   return (
     <div className="mx-auto">
+
+      <Helmet>
+          <title>Login | Lingo Bingo</title>
+      </Helmet>
       {!login && (
         <div className="signup-area flex items-center justify-center my-11">
           <div className="card bg-base-100 w-full px-4 py-10 max-w-sm shrink-0 shadow-2xl">
-            <iframe src="https://lottie.host/embed/7ef54e79-d507-4742-bc3e-f74354262fa3/AE2csfvfUB.json"></iframe>
+            <h2 className="font-bold text-center text-2xl mb-2">Sign Up</h2>
             <form className="card-body p-0" onSubmit={handleSignup}>
               <div className="form-control">
                 <label className="label">
@@ -158,7 +163,7 @@ export default function Login() {
               </div>
               <div className="form-control mt-6">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-success"
                   type="submit"
                   disabled={!!signupPasswordError}>
                   Signup
@@ -167,13 +172,13 @@ export default function Login() {
               <p className="text-center">or</p>
             </form>
             <div className="form-control ">
-              <button className="btn btn-secondary" onClick={handleGoogleLogin}>
+              <button className="btn btn-accent" onClick={handleGoogleLogin}>
                 Sign up with Google
               </button>
             </div>
             <p className="text-center py-2">
               Already Have Account?{" "}
-              <button className="text-blue-400" onClick={() => setLogin(true)}>
+              <button className="text-blue-500" onClick={() => setLogin(true)}>
                 Login
               </button>
             </p>
@@ -183,6 +188,7 @@ export default function Login() {
       {login && (
         <div className="login-area flex items-center justify-center py-10">
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <h2 className="font-bold text-center text-2xl">Login</h2>
             <form className="card-body" onSubmit={handleLogin}>
               {/* <img src={signinIcon} /> */}
               <div className="form-control">
@@ -223,7 +229,7 @@ export default function Login() {
               </div>
               <div className="form-control mt-6">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-success"
                   type="submit"
                   disabled={!!passwordError}>
                   Login
@@ -232,7 +238,7 @@ export default function Login() {
               <p className="text-center">or</p>
               <div className="form-control ">
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn-accent"
                   onClick={handleGoogleLogin}>
                   Login with Google
                 </button>

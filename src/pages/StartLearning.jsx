@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "animate.css"; // Import Animate.css
 import { AuthContext } from "../contexts/AuthProvider";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function StartLearning() {
   //fetch data from web like lesson page
@@ -29,12 +30,16 @@ export default function StartLearning() {
   return (
     <div className="mx-auto mt-10 px-4">
 
+      <Helmet>
+        <title>Start Learning | Lingo Bingo</title>
+      </Helmet>
+
       {/* Main Section with Animated Heading */}
       <div className="text-center mt-10">
         <h1 className="animate__animated animate__fadeIn animate__delay-1s text-4xl font-bold text-gray-900">
           Ready to Learn a New Language?
         </h1>
-        <p className="animate__animated animate__fadeIn animate__delay-2s text-lg text-gray-600 mt-4">
+        <p className="animate__animated animate__fadeIn animate__delay-2s text-lg text-gray-600 mt-4 font-semibold">
           Explore lessons, build vocabulary, and master a new language with
           ease. Let's get started today!
         </p>
@@ -48,7 +53,7 @@ export default function StartLearning() {
                 <h2 className="text-2xl font-bold">
                   Lesson {lesson.lesson_no}
                 </h2>
-                <p className="text-lg text-gray-700 mt-2">
+                <p className="text-lg font-semibold text-gray-700 mt-2">
                   {lesson.lesson_title}
                 </p>
               </div>

@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Tutorials.css"; // Import the CSS file
+import { Helmet } from "react-helmet";
 
 export default function Tutorials() {
   return (
-    <div className="container mx-auto p-2">
-      <h1 className="text-3xl font-bold text-center mb-4">
+    <div className="container mx-auto p-2 my-8">
+
+      <Helmet>
+          <title>Tutorial | Lingo Bingo</title>
+      </Helmet>
+
+      <h1 className="text-3xl font-bold text-center mb-8">
         Learn Vocabularies
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
